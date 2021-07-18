@@ -1,0 +1,9 @@
+time : 2021-07-18 10:38:13.980957 | CPU Score : 548 | MEM Score : 519
+time : 2021-07-18 10:38:46.982761 | CPU Score : 503 | MEM Score : 572
+time : 2021-07-18 10:39:08.041388 | CPU Score : 552 | MEM Score : 580
+time : 2021-07-18 10:39:21.808784 | CPU Score : 565 | MEM Score : 589
+time : 2021-07-18 10:41:17.821824 | CPU Score : 565 | MEM Score : 586
+time : 2021-07-18 10:41:32.526626 | CPU Score : 565 | MEM Score : 583
+time : 2021-07-18 10:45:20.238955 | CPU Score : 569 | MEM Score : 578
+time : 2021-07-18 10:46:25.783764 | CPU Score : 569 | MEM Score : 592
+time : 2021-07-18 10:50:58.754526 | CPU Score : 490 | MEM Score : 575

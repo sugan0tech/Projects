@@ -29,19 +29,11 @@ def enqueue(Head:LinkedList, data) -> LinkedList:
 
 def switch(key:int):
     dict = {
-        1 : func1(),
-        2 : func2(),
-        3 : func3(),
+        1 : "one",
+        2 : "two",
+        3 : "three" 
     }
-    print(dict[key])
+    return dict.get(key)
 
-def func1():
-    print("one")
 
-def func2():
-    print("two")
-
-def func3():
-    print("three")
-
-switch(1)
+print(switch(2))

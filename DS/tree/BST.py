@@ -13,11 +13,13 @@ def inorder(tree):
         inorder(tree.left)
         print(tree.val, " ", end="")
         inorder(tree.right)
-def preorder(tree):
+
+def preorder(tree, arr):
     if tree != None:
-        print(tree.val, " ", end="")
-        preorder(tree.left)
-        preorder(tree.right)
+        arr.append(tree.val)
+        preorder(tree.left, arr)
+        preorder(tree.right, arr)
+    return arr
 
 def create(root, data):
     if root.val > data:
@@ -35,16 +37,11 @@ root = Node(10)
 for i in range(1, 20):
     create(root, i)
 
-
-
-inorder(root)
-preorder(root)
-print(root)
+print(build(preorder(root, [])))
 
 treelst = []
-for i in range(0, 25):
-    treelst.append(random.randint(0, 100))
-
+for i in range(1, 20):
+    treelst.append(i)
 binary = build(treelst)
 
 print(binary)

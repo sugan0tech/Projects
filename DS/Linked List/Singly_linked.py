@@ -13,15 +13,16 @@ class LinkedList:
 
     def print_llist(self):
         temp = self.Head
+        print("")
         while temp:
             print(temp.data, " -> ", end='')
             temp = temp.next
         print(None)
 
     def create(self):
-        num = int(input("Enter the Node data :"))
+        num = int(input("\nEnter the Node data :"))
+        new = Node(num)
         while num != -1:
-            print(num)
             new = Node(num)
             if self.Head == None:
                 self.Head = new
@@ -33,9 +34,10 @@ class LinkedList:
         return self
         
     def insert(self):
-        num = int(input("Enter the data to be inserted"))
+        num = int(input("\nEnter the data to be inserted"))
+        print("\n1. for head insertion\n2. for tail insertion\n3. for intermediate insertion")
+        opt = int(input("Enter the option\n"))
         new = Node(num)
-        opt = int(input(print("1. for head insertion\n2. for tail insertion\n3. for intermediate insertion\n")))
         if opt == 1:
             temp = self.Head
             self.Head = new
@@ -48,7 +50,7 @@ class LinkedList:
             temp.next = new
             return self
         else:
-            num = int(input("Enter the Node to be before :"))
+            num = int(input("\nEnter the Node to be before :"))
             temp = self.Head
             while temp.next:
                 if temp.data == num:
@@ -63,7 +65,7 @@ class LinkedList:
             return self
 
     def delete(self):
-        opt = int(input(print("1. for head deletion\n2. for tail deletion\n3. for intermediate deletion\n")))
+        opt = int(input(print("\n1. for head deletion\n2. for tail deletion\n3. for intermediate deletion\n")))
         if opt == 1:
             temp = self.Head.next
             self.Head = temp
@@ -75,7 +77,7 @@ class LinkedList:
             temp.next = None
             return self
         else:
-            num = int(input("Enter the Node to be deleted :"))
+            num = int(input("\nEnter the Node to be deleted :"))
             temp = self.Head
             while temp.next:
                 if temp.data == num:
@@ -86,13 +88,14 @@ class LinkedList:
             return self
 
     def __str__(self):
-        return f"LinkedList|> Head: {self.Head}"
+        return f"\nLinkedList|> Head: {self.Head}"
 
 
 if __name__ == "__main__":
 
     L_list = LinkedList()
-    option = int(input("0. for exit\n1. for creation\n2. for printing\n3. for insertion\n4. for deletion"))
+    print("\n0. for exit\n1. for creation\n2. for printing\n3. for insertion\n4. for deletion")
+    option = int(input("Enter your option :"))
     while option:
         if option == 1:
             L_list = L_list.create()
@@ -105,5 +108,6 @@ if __name__ == "__main__":
         else:
             print(L_list)
             print("Wrong option")
-        option = int(input("0. for exit\n1. for creation\n2. for printing\n3. for insertion\n4. for deletion"))
+        print("\n0. for exit\n1. for creation\n2. for printing\n3. for insertion\n4. for deletion")
+        option = int(input("Enter your option :"))
         

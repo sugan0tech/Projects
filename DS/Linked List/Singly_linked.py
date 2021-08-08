@@ -88,13 +88,19 @@ class LinkedList:
             return self
 
     def __str__(self):
+        temp = self.Head
+        print("")
+        while temp:
+            print(temp.data, " -> ", end='')
+            temp = temp.next
+        print(None)
         return f"\nLinkedList|> Head: {self.Head}"
 
 
 if __name__ == "__main__":
 
     L_list = LinkedList()
-    print("\n0. for exit\n1. for creation\n2. for printing\n3. for insertion\n4. for deletion")
+    print("\n0. for exit\n1. for creation\n2. for printing\n3. for insertion\n4. for deletion\n5. info about current linked list")
     option = int(input("Enter your option :"))
     while option:
         if option == 1:
@@ -105,9 +111,10 @@ if __name__ == "__main__":
             L_list = L_list.insert()
         elif option == 4:
             L_list = L_list.delete()
-        else:
+        elif option == 5:
             print(L_list)
-            print("Wrong option")
-        print("\n0. for exit\n1. for creation\n2. for printing\n3. for insertion\n4. for deletion")
+        else:
+            print("\nWrong option :( \n")
+        print("\n0. for exit\n1. for creation\n2. for printing\n3. for insertion\n4. for deletion\n5. Info about current linked list")
         option = int(input("Enter your option :"))
         

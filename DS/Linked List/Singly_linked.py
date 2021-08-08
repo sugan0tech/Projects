@@ -10,7 +10,7 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.Head = None
-    
+
     def print_llist(self):
         temp = self.Head
         while temp:
@@ -20,9 +20,9 @@ class LinkedList:
 
     def create(self):
         num = int(input("Enter the Node data :"))
-        new = Node(num)
-        temp = LinkedList()
         while num != -1:
+            print(num)
+            new = Node(num)
             if self.Head == None:
                 self.Head = new
                 temp = self.Head
@@ -30,8 +30,6 @@ class LinkedList:
                 temp.next = new
                 temp = temp.next
             num = int(input("Enter the Node data :"))
-            new = Node(num)
-        
         return self
         
     def insert(self):
@@ -91,9 +89,21 @@ class LinkedList:
         return f"LinkedList|> Head: {self.Head}"
 
 
-tst = LinkedList().create()
-tst.insert()
-tst.print_llist()
-tst.insert()
-tst.print_llist()
-print(tst)
+if __name__ == "__main__":
+
+    L_list = LinkedList()
+    option = int(input("0. for exit\n1. for creation\n2. for printing\n3. for insertion\n4. for deletion"))
+    while option:
+        if option == 1:
+            L_list = L_list.create()
+        elif option == 2:
+            L_list.print_llist()
+        elif option == 3:
+            L_list.insert()
+        elif option == 4:
+            L_list.delete()
+        else:
+            print(L_list)
+            print("Wrong option")
+        option = int(input("0. for exit\n1. for creation\n2. for printing\n3. for insertion\n4. for deletion"))
+        

@@ -102,9 +102,9 @@ if __name__ == "__main__":
         elif option == 2:
             L_list.print_llist()
         elif option == 3:
-            L_list.insert()
+            L_list = L_list.insert()
         elif option == 4:
-            L_list.delete()
+            L_list = L_list.delete()
         else:
             print(L_list)
             print("Wrong option")

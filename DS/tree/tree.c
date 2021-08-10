@@ -117,8 +117,8 @@ void main()
 {
     int in_order[5] = {3, 9, 20, 15, 7}, pre_order[5] = {9, 3, 15, 20, 7}, i;
     struct Node *Root;
-    Root = impose(0, 0, 4, pre_order, in_order);
-    inorder(Root);
+    // Root = impose(0, 0, 4, pre_order, in_order);
+    // inorder(Root);
 
     // printf("\nEnter the In order :");
     // for(i=0; i<10; i++)

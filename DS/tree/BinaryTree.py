@@ -1,41 +1,33 @@
-class Node:
+class TreeNode:
     def __init__(self, data):
         self.data = data
         self.left = None
         self.right = None
-    
-class BinaryTree:
-    def __init__(self):
-        self.root = None
-    
-    def create(self):
-        num = int(input('Enter the node data -1 for None'))
-        new = Node(num)
-        if num == -1:
-            return None
-        if self.root == None:
-            self.root = new
-        
-        num = int(input('Enter the node for left'))
-        new.left = self.create()
-        num = int(input('Enter the node for right'))
-        new.right = self.create()
-        return new
-    def inorder(self, root):
-        if root != None:
-            self.inorder(root.left)
-            print(root.data)
-            self.inorder(root.right)
-        else:
-            print(None)
         
 
-opt = int(input('Options'))
-tree = BinaryTree()
+def create():
+    num =  int(input("enter the node val"))
+    if num == -1:
+        return None
+    new = TreeNode(num)
+    print(f"Enter the left child for {new.data} :")
+    new.left = create()
+    print(f"Enter the right child for {new.data} :")
+    new.right = create()
+    return new
+
+def inorder(tree):
+    if tree != None:
+        inorder(tree.left)
+        print(tree.data)
+        inorder(tree.right)
+    else :
+        print("None")
+
+opt = int(input("Enter the option"))
 while opt:
     if opt == 1:
-        tree = tree.create()
+        tree = create()
     if opt == 2:
-        tree.inorder(tree)
-
-    opt = int(input('Options'))
+        inorder(tree)
+    opt = int(input("enter the option"))

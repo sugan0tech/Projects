@@ -42,7 +42,7 @@ class BstNode:
         temp = self
         while temp.left:
             temp = temp.left
-        print(temp.data)
+        return temp
 
     def preorder(self):
         if self.data :
@@ -87,9 +87,41 @@ class BstNode:
         if key < self.data:
             if self.left:
                 self.left.delete(key)
+            else:
+                return self
         elif key > self.data :
             if self.right:
                 self.right.delete(key)
+            else:
+                return self
+        else:
+            if self.left is None:
+                temp = self.right
+                self = None
+                return temp
+            elif self.right is None:
+                temp = self.left
+                self = None
+                return temp
+            temp = self.min()
+            self.data = temp.data
+            self.right.delete(temp.data)
+        return self
+
+class BinaryTree:
+    def __init__(self):
+        self.Root = None
+    
+    def __str__(self):
+        if self.root:
+            self._Print(self.Root)
+    
+    def _Print(self, Node):
+        if Node:
+            self._Print(Node.left)
+            print(Node.data)
+            self._Print(Node.right)
+
 
         
 opt = int(input("Enter the option :"))
@@ -112,6 +144,6 @@ while opt:
         print("}")
     if opt == 3:
         tree.max()
-        tree.min()
         tree.add(87)
+        tree = tree.delete(4)
     opt = int(input("enter the option :"))

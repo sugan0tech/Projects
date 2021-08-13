@@ -4,29 +4,40 @@ class Node:
         self.next = None
         self.pre = None
     
-class LinkedList:
+
+class DoubleLinkedList:
     def __init__(self):
-        self.Head = None
+        self.head = None
     
-    def printl(self):
-        temp = self.Head
+    def printd(self):
+        temp = self.head
+        print("Head :", end=' ')
         while temp.next:
-            print(temp.data, " -> ", end='')
+            print(temp.data, "->", end=' ')
             temp = temp.next
-
-        print(temp.data)
-        temp = temp.pre
-        while temp:
-            print(temp.data, " -> ", end='')
+        print(f"{temp.data} -> None")
+        print("None", end=' ')
+        while temp != self.head:
+            print(temp.data, "->", end=' ')
             temp = temp.pre
+        print(f"{self.head.data} : Head")
 
-llist = LinkedList()
-llist.Head = Node(8)
-temp = llist.Head
-for i in range(3):
-    num = int(input("enter the num"))
-    temp.next = Node(num)
-    temp.next.pre = temp
-    temp = temp.next
+    def create(self):
+        num = int(input("Enter the Node val :"))
+        new = Node(num)
+        while num:
+            if self.head == None:
+                self.head = new
+                temp = self.head
+            else:
+                temp.next = new
+                new.pre = temp
+                temp = new
 
-llist.printl()
+            num = int(input("Enter the Node val :"))
+            new = Node(num)
+
+        
+llsit = DoubleLinkedList()
+llsit.create()
+llsit.printd()

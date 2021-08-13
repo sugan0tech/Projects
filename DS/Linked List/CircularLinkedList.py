@@ -2,7 +2,6 @@ class Node:
     def __init__(self, data = None):
         self.data = data
         self.next = None
-        self.pre = None
     
 
 class DoubleLinkedList:
@@ -12,14 +11,11 @@ class DoubleLinkedList:
     def printd(self):
         temp = self.head
         print("Head :", end=' ')
-        while temp.next:
-            print(temp.data, "->", end=' ')
-            temp = temp.next
-        print(f"{temp.data} -> None")
-        print("None", end=' ')
+        print(temp.data, "->", end=' ')
+        temp = temp.next
         while temp != self.head:
             print(temp.data, "->", end=' ')
-            temp = temp.pre
+            temp = temp.next
         print(f"{self.head.data} : Head")
 
     def create(self):
@@ -28,11 +24,12 @@ class DoubleLinkedList:
         while num:
             if self.head == None:
                 self.head = new
+                self.head.next = self.head
                 temp = self.head
             else:
                 temp.next = new
-                new.pre = temp
                 temp = new
+                temp.next = self.head
 
             num = int(input("Enter the Node val :"))
             new = Node(num)

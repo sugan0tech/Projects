@@ -9,14 +9,14 @@ class DoubleLinkedList:
     def __init__(self):
         self.head = None
     
-    def printd(self):
+    def print(self):
         temp = self.head
         print("Head :", end=' ')
         while temp.next:
             print(temp.data, "->", end=' ')
             temp = temp.next
         print(f"{temp.data} -> None")
-        print("None", end=' ')
+        print("None ->", end=' ')
         while temp != self.head:
             print(temp.data, "->", end=' ')
             temp = temp.pre
@@ -40,4 +40,4 @@ class DoubleLinkedList:
         
 llsit = DoubleLinkedList()
 llsit.create()
-llsit.printd()
+llsit.print()

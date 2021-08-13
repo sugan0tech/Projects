@@ -38,3 +38,7 @@ class DoubleLinkedList:
 llsit = DoubleLinkedList()
 llsit.create()
 llsit.printd()
+print("----*----*----*----*----*----");
+print("Thanks for using this code :)");
+print("----*----*----*----*----*----");
+#Done by sugan0tech

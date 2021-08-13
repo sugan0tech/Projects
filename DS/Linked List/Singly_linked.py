@@ -118,3 +118,7 @@ if __name__ == "__main__":
         print("\n0. for exit\n1. for creation\n2. for printing\n3. for insertion\n4. for deletion\n5. Info about current linked list")
         option = int(input("Enter your option :"))
         
+print("----*----*----*----*----*----");
+print("Thanks for using this code :)");
+print("----*----*----*----*----*----");
+#Done by sugan0tech

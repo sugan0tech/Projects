@@ -1,0 +1,82 @@
+class account 
+
+Step 1: declare account_num, user_name, acctount_type, status
+Step 2: declare function get_account(), set_account()
+Step 3: end
+    account get_account()
+    Step 1: Function start
+    Step 2: display acctount_num, user_name, acctount_type, status
+    Step 3: end function
+
+    account set_account()
+    Step 1: Function start
+    Step 2: set acctount_num, user_name, acctount_type, status
+    Step 3: end function
+
+
+class user
+
+Step 1: declare name, address, phone, age, user_id
+Step 2: declare static user_count
+Step 3: delcare function get_user(), set_user()
+Step 4: end
+    user get_user()
+    Step 1: Function start
+    Step 2: display name, address, phone, age, user_id
+    Step 3: Function end
+
+    user set_user()
+    Step 1: Function start
+    Step 2: set name, address, phone, age
+    Step 3: set user_id = User_count
+    Step 4: Function end
+
+
+class savings 
+
+Step 1: declare savings_limit = 10000, savings, net_bal
+Step 2: declare function set(), get_savings(), deposit(), withdraw(), info()
+Step 3: end
+
+    savings set()
+    Step 1: Function start
+    Step 2: call user set_user()
+    Step 3: call account set_account()
+    Step 4: set savings = savings, net_bal = net_bal
+    step 5: function end
+
+    savings get_savings()
+    Step 1: function start
+    Step 2: display savings_limit, savings, net_bal
+    Step 3: function end
+
+    savings info()
+    Step 1: function start
+    Step 2: call user get_user()
+    Step 3: call account get_account()
+    Step 4: call get_savings()
+    Step 5: function end
+
+    savings deposit()
+    Step 1: fucntion start
+    Step 2: get ammount
+    Step 3: set net_bal = net_bal + ammount
+    Step 4: function end 
+
+    savings withdraw()
+    Step 1: fucntion start
+    Step 2: get ammount
+    Step 3: set net_bal = net_bal - ammount
+    Step 4: function end 
+
+
+Main Function
+
+Step 1: Start
+Step 2: declare savings me
+Step 3: call me.set(100, 5000)
+Step 4: call me.info()
+Step 5: call me.deposit()
+Step 6: call me.withdraw()
+Step 7: call me.info()
+Step 8: End

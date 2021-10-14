@@ -1,0 +1,22 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "full": "nodemon app.js",
+    "call": "nodemon call_back.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "i": "^0.3.6",
+    "lodash": "^4.17.21",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

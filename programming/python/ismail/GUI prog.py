@@ -1,0 +1,20 @@
+from tkinter import tk
+from tkinter import messagebox
+import MySQLdb as sql
+root=tk.TK()
+root.geomentry("300x250")
+t = Label(root, text = "Login Form", font = ('arial',14), bd = 15)
+t.pack()
+form = Frame(root)
+form.pack(side = TOP,fill = X)
+nameL = Label(form, text= "Username:",font = ('arial',14),bd=15)
+nameL = Label(form, text= "PasswordL:",font = ('arial',14),bd=15)
+nameL.grid(row = 1, sticky = W)
+passL.grid(row =2, sticky = W)
+nameE = Entrv(form)
+passE = Entry(form, show = "*")
+nameE.grid(row = 1, coloumn = 2)
+passE.grid(row = 2, coloumn = 2)
+login = Button(root,text = "Login")
+login.pack()
+root.mainloop()

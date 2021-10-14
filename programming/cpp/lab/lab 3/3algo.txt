@@ -1,0 +1,123 @@
+class person
+
+Step 1: declare int id, string name
+Step 2: declare virtual function getdata(), display(), bonus()
+Step 3: End
+
+    person getdata()
+    Step 1: Function Start
+    Step 2: display "enter the name and number of the employee"
+    Step 3: get name, Id
+    Step 4: Function end
+
+    person display()
+    Step 1: Function Start
+    Step 2: display "Employee name" , name, "Id", id
+    Step 3: Function end
+
+    person bonus()
+    Step 1: Function Start
+    Step 2: "bonus for base function is called"
+    Step 3: Function End
+
+
+Class admin ( from person)
+
+Step 1: Start
+Step 2: delcare sale_admin
+Step 3: declare function getdata(), display(), bonus()
+Step 4: End
+
+    admin getdata()
+    Step 1: Function Start
+    Step 2: display "Enter Admin sale amount"
+    Step 3: get sale_admin
+    Step 4: Function End
+    
+    admin display()
+    Step 1: Function Start
+    Step 2: display "Admin sale amount", sale_admin
+    Step 3: Function end
+
+    admin bonus()
+    Step 1: Function Start
+    Step 2: if sale_admin > 2000 do 
+    Step 3: display "The bonus amount of the admin is ", sale_admin*0.25
+    Step 4: End if
+    Step 5: Function end
+
+
+Class account ( from person)
+
+Step 1: Start
+Step 2: delcare amt
+Step 3: declare function getdata(), display(), bonus()
+Step 4: End
+
+    admin getdata()
+    Step 1: Function Start
+    Step 2: display "Enter account amout"
+    Step 3: get amt
+    Step 4: Function End
+
+    admin display()
+    Step 1: Function Start
+    Step 2: display "account amount", amt
+    Step 3: Function end
+
+    admin bonus()
+    Step 1: Function Start
+    Step 2: if sale_admin > 10000 do 
+    Step 3: display "The bonus amount of the admin is ", amt*0.25
+    Step 4: End if
+    Step 5: Function end
+
+    
+Class master ( from admin, account)
+
+Step 1: Start
+Step 2: declare function getdata(), display(), bonus()
+Step 3: End
+
+    master getdata()
+    Step 1: Function Start
+    Step 2: display "Executing get data of master class"
+    Step 3: call person getdata(), admin getdata(), account getdata()
+    Step 4: Function End
+
+    master display()
+    Step 1: Function Start
+    Step 2: display "Executing display of master class sale amount"
+    Step 3: call person display(), admin display(), account display()
+    Step 4: Function end
+
+    master bonus()
+    Step 1: Function Start
+    Step 2: display "The bonus amount of the admin is ", sale_admin*0.25
+    Step 4: call person bonus(), admin bonus(), account bonus()
+    Step 3: Function end
+
+Main Function
+
+Step 1: Start
+Step 2: delcare person p, per_ptr
+Step 3: delcare admin a, admin_ptr
+Step 4: delcare account ac, acc_ptr
+Step 5: delcare master ms, ms_ptr
+Step 6: display "assigning the addr of base class person to base class pointer "
+Step 7: call p.getdata()
+Step 8: call p.display()
+Step 9: call p.bonus()
+Step 10: display "\n assigning the addr of admin class to base class pointer "
+Step 11: call a.getdata()
+Step 12: call a.display()
+Step 13: call a.bonus()
+Step 14: display "\n assigning the addr of account class to base class pointer "
+Step 15: call ac.getdata()
+Step 16: call ac.display()
+Step 17: call ac.bonus()
+Step 18: display "\n assigning the addr of class master to base class pointer "
+Step 19: call ms.getdata()
+Step 20: call ms.display()
+Step 21: call ms.bonus()
+Step 22: End main

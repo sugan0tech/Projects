@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+</head>
+<p>si</p>
+
+<body>
+    <div>
+        <form id="reg-form">
+            <input type="text" placeholder="User name" id="username" value="sam">
+            <input type="password" placeholder="Password" id="password" value="sam@123">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div>
+        <p id="container">
+
+        </p>
+    </div>
+    <script>
+        const form = document.getElementById("reg-form");
+        form.addEventListener("submit", reg);
+
+        async function reg(event) {
+            /* by default form submission 
+            refresh the page to prevent 
+            that we use preventdefault*/
+            event.preventDefault();
+            const username = document.getElementById("username").value
+            const password = document.getElementById("password").value
+            var d = new Date();
+
+            const result = await fetch('/api/people', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username,
+                    password,
+                    Time: d.getTime()
+                })
+            })
+            console.log(username, password)
+
+            var val = document.getElementById("container").innerHTML
+            document.getElementById("container").innerHTML = val + " " + username
+        }
+    </script>
+</body>
+
+</html>

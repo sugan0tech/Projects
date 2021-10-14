@@ -1,0 +1,60 @@
+Module 1:
+    Basics 103 pages
+        Introduction
+        Data types
+        variables
+        Operators and expressions
+        If else, switch
+        loop
+        functions
+        recrusions
+        array 
+        strings
+    Advanced 55 pages
+        structures
+        Unions
+        Typedef and enum
+        Pointers
+        arrays and functions
+        File Handelling
+        Storage Classes
+        Pre-processer derivatives
+Module 2:
+    Data structures 67 pages
+        Introduction
+        ADT 
+        List ADT  
+        Array based implementation
+        Linked list(all modes)
+        applications
+    Linear Data structures 57 pages
+        Stack
+        Queue(all methods)
+        Applications
+
+Module 3:
+    Hashing 28 pages
+        Introduction
+        general-types :
+            Modulo Division
+            mid-square methods
+            Folding method  
+            Digit extraction method 
+            radix transformation
+    Non-linear Data structures 47 pages
+        Tree
+        Tree terminologes
+        Binary tree
+        Types
+            full or strict binary Tree
+            Perfect Binary Tree
+            Complete Binary Tree
+            Degenerate or Pathological Tree
+            Skewed Binary Tree
+        Operations (only in Binary Tree)    
+        Expression tree (Binary Tree Special Case)
+        Binary Search tree (Binary Tree Special Case)
+        
+
+        
+

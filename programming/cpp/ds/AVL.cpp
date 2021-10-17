@@ -5,7 +5,7 @@ using namespace std;
 class TreeNode
 {
 public:
-    int data;
+    int data, height;
     TreeNode *left;
     TreeNode *right;
     TreeNode(int num)

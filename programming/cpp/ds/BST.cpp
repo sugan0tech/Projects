@@ -29,9 +29,9 @@ public:
     void postorder(TreeNode *node);
     void search(TreeNode *node, int num);
     int maxHeight_Depth(TreeNode *node);
+    TreeNode *del(TreeNode *node, int num);
     TreeNode *miin(TreeNode *node);
     TreeNode *maax(TreeNode *node);
-    TreeNode *del(TreeNode *node, int num);
 };
 
 void BST::create(int num)
@@ -144,25 +144,6 @@ int BST::maxHeight_Depth(TreeNode *node)
     }
 }
 
-TreeNode *miin(TreeNode *node)
-{
-    TreeNode *temp = node;
-    while (temp->left != NULL)
-    {
-        temp = temp->left;
-    }
-    return temp;
-}
-
-TreeNode *maax(TreeNode *node)
-{
-    TreeNode *temp = node;
-    while (temp->right != NULL)
-    {
-        temp = temp->right;
-    }
-    return temp;
-}
 TreeNode *BST::del(TreeNode *node, int num)
 {
     if (node == NULL)
@@ -199,11 +180,31 @@ TreeNode *BST::del(TreeNode *node, int num)
     return node;
 }
 
+TreeNode *BST::miin(TreeNode *node)
+{
+    TreeNode *temp = node;
+    while (temp->left != NULL)
+    {
+        temp = temp->left;
+    }
+    return temp;
+}
+
+TreeNode *BST::maax(TreeNode *node)
+{
+    TreeNode *temp = node;
+    while (temp->right != NULL)
+    {
+        temp = temp->right;
+    }
+    return temp;
+}
+
 int main()
 {
     BST tree;
     int opt, n = 1;
-    cout << "\n\nEnter your choice :\n 0 for exit, \n 1 for creation, \n 2 inorer ,preorder and postorder, \n 3 for insertion, \n 4 for deletion, \n 5 For search.\n";
+    cout << "\n\nEnter your choice :\n 0 for exit, \n 1 for creation, \n 2 inorer ,preorder and postorder, \n 3 for insertion, \n 4 for deletion, \n 5 for searching, \n 6 For finding min and max.\n";
     cout << " >";
     cin >> opt;
     while (opt)
@@ -239,6 +240,9 @@ int main()
             break;
         case 4:
             //delete section
+            cout << "\nenter the num to deleted: ";
+            cin >> n;
+            tree.del(tree.root, n);
             break;
         case 5:
             // search section
@@ -248,11 +252,11 @@ int main()
             break;
         case 6:
             // min and max
-            cout << "\n min : " << miin(tree.root)->data << "\n max : " << maax(tree.root)->data << endl;
+            cout << "\n min : " << tree.miin(tree.root)->data << "\n max : " << tree.maax(tree.root)->data << endl;
         default:
             break;
         }
-        cout << "\n\nEnter your choice :\n 0 for exit, \n 1 for creation, \n 2 inorer ,preorder and postorder, \n 3 for insertion, \n 4 for deletion, \n 5 For search.\n";
+        cout << "\n\nEnter your choice :\n 0 for exit, \n 1 for creation, \n 2 inorer ,preorder and postorder, \n 3 for insertion, \n 4 for deletion, \n 5 for searching, \n 6 For finding min and max.\n";
         cout << " >";
         cin >> opt;
     }

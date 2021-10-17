@@ -34,6 +34,7 @@ public:
     TreeNode *del(TreeNode *node, int num);
     TreeNode *miin(TreeNode *node);
     TreeNode *maax(TreeNode *node);
+    int get_bal(TreeNode *node);
 };
 
 void BST::create(int num)
@@ -216,6 +217,14 @@ TreeNode *BST::maax(TreeNode *node)
     return temp;
 }
 
+int BST ::get_bal(TreeNode *node)
+{
+
+    if (node == NULL)
+        return 0;
+    return height(node, node->left->data) - height(node, node->right->data);
+}
+
 int main()
 {
     BST tree;
@@ -275,6 +284,10 @@ int main()
             cin >> n;
             cout << "\n depth : " << tree.depth(tree.root, n) << endl;
             cout << "\n height : " << tree.height(tree.root, n);
+        case 8:
+            //get bal
+            cout << "\nEnter the num to find balance :";
+            cin >> n;
         default:
             break;
         }

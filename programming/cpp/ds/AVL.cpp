@@ -26,11 +26,12 @@ public:
     void _create(TreeNode *node, int num);
     void inorder(TreeNode *node);
     void preorder(TreeNode *node);
+    void postorder(TreeNode *node);
+    void search(TreeNode *node, int num);
     int maxHeight_Depth(TreeNode *node);
-    TreeNode *left_rotate(TreeNode *node);
-    TreeNode *right_rotate(TreeNode *node);
-    TreeNode left_right_rotate(TreeNode *node);
-    TreeNode right_left_rotate(TreeNode *node);
+    TreeNode *del(TreeNode *node, int num);
+    TreeNode *miin(TreeNode *node);
+    TreeNode *maax(TreeNode *node);
 };
 
 void BST::create(int num)
@@ -91,6 +92,40 @@ void BST::preorder(TreeNode *node)
     }
 }
 
+void BST::postorder(TreeNode *node)
+{
+    if (node)
+    {
+        postorder(node->left);
+        postorder(node->right);
+        cout << node->data << " ";
+    }
+}
+
+void BST::search(TreeNode *node, int num)
+{
+    TreeNode *temp = node;
+    if (node != NULL)
+    {
+        if (num > temp->data)
+        {
+            search(temp->right, num);
+        }
+        else if (num < temp->data)
+        {
+            search(temp->left, num);
+        }
+        else
+        {
+            cout << "\nFound it !! " << temp->data << endl;
+        }
+    }
+    else
+    {
+        cout << "\nnotfound\n";
+    }
+}
+
 int BST::maxHeight_Depth(TreeNode *node)
 {
     if (node == NULL)
@@ -109,29 +144,67 @@ int BST::maxHeight_Depth(TreeNode *node)
     }
 }
 
-TreeNode *BST::left_rotate(TreeNode *node)
+TreeNode *BST::del(TreeNode *node, int num)
 {
-    TreeNode *P1;
-    P1 = node->right;
-    node->right = P1->left;
-    P1->left = node;
-    return P1;
+    if (node == NULL)
+        return root;
+    else if (num < node->data)
+        root->left = del(node->left, num);
+    else if (num > node->data)
+        root->right = del(node->right, num);
+    else if (num == node->data)
+    {
+        if (node->left == NULL && node->right == NULL)
+        {
+            return NULL;
+        }
+        else if (root->left == NULL)
+        {
+            TreeNode *temp = node->right;
+            delete node;
+            return temp;
+        }
+        else if (root->right == NULL)
+        {
+            TreeNode *temp = node->left;
+            delete node;
+            return temp;
+        }
+        else
+        {
+            TreeNode *temp = miin(node->right);
+            node->data = temp->data;
+            node->right = del(node->right, temp->data);
+        }
+    }
+    return node;
 }
 
-TreeNode *BST::right_rotate(TreeNode *node)
+TreeNode *BST::miin(TreeNode *node)
 {
-    TreeNode *P1;
-    P1 = node->left;
-    node->left = P1->left;
-    P1->right = node;
-    return P1;
+    TreeNode *temp = node;
+    while (temp->left != NULL)
+    {
+        temp = temp->left;
+    }
+    return temp;
+}
+
+TreeNode *BST::maax(TreeNode *node)
+{
+    TreeNode *temp = node;
+    while (temp->right != NULL)
+    {
+        temp = temp->right;
+    }
+    return temp;
 }
 
 int main()
 {
     BST tree;
     int opt, n = 1;
-    cout << "\n\nEnter your choice :\n 0 for exit, \n 1 for creation, \n 2 inorer and preorder, \n 3 for insertion, \n 4 for deletion, \n 5 For max depth\n";
+    cout << "\n\nEnter your choice :\n 0 for exit, \n 1 for creation, \n 2 inorer ,preorder and postorder, \n 3 for insertion, \n 4 for deletion, \n 5 for searching, \n 6 For finding min and max.\n";
     cout << " >";
     cin >> opt;
     while (opt)
@@ -139,6 +212,7 @@ int main()
         switch (opt)
         {
         case 1:
+            //creation section
             while (n != 0)
             {
                 cout << "\nenter the num : ";
@@ -149,38 +223,40 @@ int main()
             cout << "\n root node " << tree.root->data;
             break;
         case 2:
+            //display section
             cout << "\n\nInorder : ";
             tree.inorder(tree.root);
             cout << "\n\nPreorder : ";
             tree.preorder(tree.root);
+            cout << "\n\nPostorder : ";
+            tree.postorder(tree.root);
             cout << endl;
             break;
         case 3:
+            //insertion section
             cout << "\nenter the num : ";
             cin >> n;
             tree.create(n);
             break;
         case 4:
-            cout << "\nleft rotate";
-            tree.root = tree.left_rotate(tree.root);
-            cout << "\n\tInorder : ";
-            tree.inorder(tree.root);
-            cout << "\n\tPreorder :";
-            tree.preorder(tree.root);
-            cout << "\nright rotate";
-            tree.root = tree.right_rotate(tree.root);
-            cout << "\n\tInorder : ";
-            tree.inorder(tree.root);
-            cout << "\n\tPreorder :";
-            tree.preorder(tree.root);
-            cout << "\n";
+            //delete section
+            cout << "\nenter the num to deleted: ";
+            cin >> n;
+            tree.del(tree.root, n);
             break;
         case 5:
+            // search section
+            cout << "\nenter the num to search: ";
+            cin >> n;
+            tree.search(tree.root, n);
             break;
+        case 6:
+            // min and max
+            cout << "\n min : " << tree.miin(tree.root)->data << "\n max : " << tree.maax(tree.root)->data << endl;
         default:
             break;
         }
-        cout << "\n\nEnter your choice :\n 0 for exit, \n 1 for creation, \n 2 inorer and preorder, \n 3 for insertion, \n 4 for deletion, \n 5 For max depth\n";
+        cout << "\n\nEnter your choice :\n 0 for exit, \n 1 for creation, \n 2 inorer ,preorder and postorder, \n 3 for insertion, \n 4 for deletion, \n 5 for searching, \n 6 For finding min and max.\n";
         cout << " >";
         cin >> opt;
     }

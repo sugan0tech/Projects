@@ -22,10 +22,9 @@ class BstNode:
             self.left.insert(num)
             return
         self.left = BstNode(num)
-    
 
     def inorder(self):
-        if self.data :
+        if self.data:
             if self.left:
                 self.left.inorder()
             print(self.data, end=' ')
@@ -45,16 +44,15 @@ class BstNode:
         return temp
 
     def preorder(self):
-        if self.data :
+        if self.data:
             print(self.data, end=' ')
             if self.left:
                 self.left.preorder()
             if self.right:
                 self.right.preorder()
 
-
     def postorder(self):
-        if self.data :
+        if self.data:
             if self.left:
                 self.left.postorder()
             if self.right:
@@ -64,10 +62,10 @@ class BstNode:
     def add(self, key):
         if self is None:
             self = BstNode(key)
-        
+
         if self.data == key:
             return self
-        
+
         if key < self.data:
             if self.left:
                 self.left = self.left.add(key)
@@ -79,17 +77,17 @@ class BstNode:
             else:
                 self.right = BstNode(key)
         return self
-    
+
     def delete(self, key):
         if self is None:
             return self
-        
+
         if key < self.data:
             if self.left:
                 self.left.delete(key)
             else:
                 return self
-        elif key > self.data :
+        elif key > self.data:
             if self.right:
                 self.right.delete(key)
             else:
@@ -108,14 +106,15 @@ class BstNode:
             self.right.delete(temp.data)
         return self
 
+
 class BinaryTree:
     def __init__(self):
         self.Root = None
-    
+
     def __str__(self):
         if self.root:
             self._Print(self.Root)
-    
+
     def _Print(self, Node):
         if Node:
             self._Print(Node.left)
@@ -123,27 +122,26 @@ class BinaryTree:
             self._Print(Node.right)
 
 
-        
 opt = int(input("Enter the option :"))
 tree = BstNode(6)
 while opt:
     if opt == 1:
-        num = int(input("enter the node val"))
+        num = int(input("\n Enter the node val :"))
         while num != -1:
             tree.insert(num)
-            num = int(input("enter the node val"))
+            num = int(input("\n Enter the node val :"))
     if opt == 2:
-        print("Tree Inorder : { ", end='')
+        print("\n Tree Inorder : ", end='')
         tree.inorder()
-        print("}")
-        print("Tree Preorder : { ", end='')
+        print("\n")
+        print(" Tree Preorder :  ", end='')
         tree.preorder()
-        print("}")
-        print("Tree Postorder : { ", end='')
+        print("\n")
+        print(" Tree Postorder :  ", end='')
         tree.postorder()
-        print("}")
+        print("\n")
     if opt == 3:
         tree.max()
         tree.add(87)
         tree = tree.delete(4)
-    opt = int(input("enter the option :"))
+    opt = int(input("Enter the option :"))

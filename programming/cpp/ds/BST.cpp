@@ -31,7 +31,7 @@ public:
     int maxHeight_Depth(TreeNode *node);
     TreeNode *miin(TreeNode *node);
     TreeNode *maax(TreeNode *node);
-    // TreeNode *del(TreeNode *node, int num);
+    TreeNode *del(TreeNode *node, int num);
 };
 
 void BST::create(int num)
@@ -171,24 +171,23 @@ TreeNode *BST::del(TreeNode *node, int num)
         root->left = del(node->left, num);
     else if (num > node->data)
         root->right = del(node->right, num);
-    else
+    else if (num == node->data)
     {
         if (node->left == NULL && node->right == NULL)
         {
-            delete node;
-            node = NULL;
+            return NULL;
         }
         else if (root->left == NULL)
         {
-            TreeNode *temp = node;
-            node = node->right;
-            delete temp;
+            TreeNode *temp = node->right;
+            delete node;
+            return temp;
         }
         else if (root->right == NULL)
         {
-            TreeNode *temp = node;
-            node = node->left;
-            delete temp;
+            TreeNode *temp = node->left;
+            delete node;
+            return temp;
         }
         else
         {

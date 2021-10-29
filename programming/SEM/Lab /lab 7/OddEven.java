@@ -23,32 +23,32 @@ public class OddEven {
     }
 
     @Test
-    public void Test1() {
+    public void Test_1() {
 
         assertEquals(0, odd_even(1));
 
     }
 
     @Test
-    public void Test2() {
+    public void Test_2() {
 
         assertEquals(1, odd_even(4));
     }
 
     @Test
-    public void Test3() {
+    public void Test_3() {
 
         assertEquals(0, odd_even(9));
     }
 
     @Test
-    public void Test4() {
+    public void Test_4() {
 
         assertEquals(1, odd_even(2));
     }
 
     @Test
-    public void Test5() {
+    public void Test_5() {
 
         assertEquals(0, odd_even(11));
     }

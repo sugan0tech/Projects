@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PosNeg",
+            "request": "launch",
+            "mainClass": "PosNeg",
+            "projectName": "programming_9e9f947b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Reverse",
+            "request": "launch",
+            "mainClass": "Reverse",
+            "projectName": "programming_9e9f947b"
+        },
+        {
+            "type": "java",
+            "name": "Launch StrEqual",
+            "request": "launch",
+            "mainClass": "StrEqual",
+            "projectName": "programming_9e9f947b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Prime",
+            "request": "launch",
+            "mainClass": "Prime",
+            "projectName": "programming_9e9f947b"
+        },
+        {
+            "type": "java",
             "name": "Launch OddEven",
             "request": "launch",
             "mainClass": "OddEven",

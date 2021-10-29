@@ -3,9 +3,10 @@ import org.junit.Test;
 
 public class Prime {
     public static void main(String args[]) {
+        System.out.println(prime_check(12));
     }
 
-    public static String prmie_check(int n) {
+    public static String prime_check(int n) {
         int i, m = 0;
         m = n / 2;
         if (n == 0 || n == 1) {
@@ -23,27 +24,27 @@ public class Prime {
     }
 
     @Test
-    public void Test1() {
-        assertEquals("prime", prmie_check(3));
+    public void Test_1() {
+        assertEquals("prime", prime_check(3));
     }
 
     @Test
-    public void Test2() {
-        assertEquals("not a prime", prmie_check(8));
+    public void Test_2() {
+        assertEquals("not a prime", prime_check(8));
     }
 
     @Test
-    public void Test3() {
-        assertEquals("prime", prmie_check(19));
+    public void Test_3() {
+        assertEquals("prime", prime_check(19));
     }
 
     @Test
-    public void Test4() {
-        assertEquals("not a prime", prmie_check(18));
+    public void Test_4() {
+        assertEquals("not a prime", prime_check(18));
     }
 
     @Test
-    public void Test5() {
-        assertEquals("prime", prmie_check(89));
+    public void Test_5() {
+        assertEquals("prime", prime_check(89));
     }
 }

@@ -23,32 +23,32 @@ public class PosNeg {
     }
 
     @Test
-    public void Test1() {
+    public void Test_1() {
 
         assertEquals(1, pos_neg(1));
 
     }
 
     @Test
-    public void Test2() {
+    public void Test_2() {
 
         assertEquals(1, pos_neg(4));
     }
 
     @Test
-    public void Test3() {
+    public void Test_3() {
 
         assertEquals(0, pos_neg(-9));
     }
 
     @Test
-    public void Test4() {
+    public void Test_4() {
 
         assertEquals(1, pos_neg(2));
     }
 
     @Test
-    public void Test5() {
+    public void Test_5() {
 
         assertEquals(0, pos_neg(-11));
     }

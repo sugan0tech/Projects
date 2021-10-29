@@ -3,6 +3,7 @@ import org.junit.Test;
 
 public class Reverse {
     public static void main(String args[]) {
+        System.out.println(reverseastring("Hello"));
     }
 
     public static String reverseastring(String a) {
@@ -15,27 +16,27 @@ public class Reverse {
     }
 
     @Test
-    public void Test1() {
+    public void Test_1() {
         assertEquals("olleH", reverseastring("Hello"));
     }
 
     @Test
-    public void Test2() {
+    public void Test_2() {
         assertEquals("emocleW", reverseastring("Welcome"));
     }
 
     @Test
-    public void Test3() {
+    public void Test_3() {
         assertEquals("ESC", reverseastring("CSE"));
     }
 
     @Test
-    public void Test4() {
+    public void Test_4() {
         assertEquals("eniF", reverseastring("Fine"));
     }
 
     @Test
-    public void Test5() {
+    public void Test_5() {
         assertEquals("meS", reverseastring("Sem"));
     }
 }

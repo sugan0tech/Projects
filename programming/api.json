@@ -1,0 +1,19 @@
+Data - Send
+{
+    "ADLER_BOX": {
+        "ID": "4x322a1",
+        "Status": "Active",
+        "Error": "Low Amps",
+        "In_Work":"None",
+        "Sensor_value": {
+            "Volt": 500000,
+            "Amps": 30
+        }
+    }
+}
+
+Data - reveive
+{
+    "Grid":{"Token":"sidiiKi**(*@#DSisoiciweoiweoi*9",
+    "Command":"DeActivate"}
+}

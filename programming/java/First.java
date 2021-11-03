@@ -8,6 +8,7 @@ public class First {
         int tmp = s.nextInt();
         int tmp2 = s.nextInt();
         System.out.println(" " + tmp + "  " + tmp2);
+        s.close();
     }
 
     static int tst(int x, int y) {

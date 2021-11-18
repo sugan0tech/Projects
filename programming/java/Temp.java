@@ -6,5 +6,4 @@ public class Temp {
         System.out.println(Math.pow(8, 2));
 
     }
-
 }

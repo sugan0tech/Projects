@@ -8,12 +8,13 @@ Data - Send
         "Sensor_value": {
             "Volt": 500000,
             "Amps": 30
-        }
+        },
+        "token":"JWT"
     }
 }
 
 Data - reveive
 {
-    "Grid":{"Token":"sidiiKi**(*@#DSisoiciweoiweoi*9",
+    "Grid":{"Token":"JWT",
     "Command":"DeActivate"}
 }

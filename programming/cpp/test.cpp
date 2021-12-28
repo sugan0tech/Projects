@@ -1,44 +1,31 @@
 #include <iostream>
 using namespace std;
-class node
+class complex
 {
 public:
-    int data;
-    node *link;
+    int a;
+    int b;
+    void print()
+    {
+        cout << "\n"
+             << a << " + i" << b << "\n";
+    }
+    complex(int x, int y)
+    {
+        this->a = x;
+        this->b = y;
+    }
+    void add(int x, int y)
+    {
+        a = a + x;
+        b = b + y;
+    }
 };
-void display(node *n)
-{
-
-    while (n != NULL)
-    {
-        cout << "VAlue is " << n->data << endl;
-        n = n->link;
-    }
-}
-void deletelist(node *head, int pos)
-{
-    node *temp = head;
-    pos--;
-    while (pos)
-    {
-        temp = temp->link;
-        pos--;
-    }
-    temp->link = temp->link->link;
-}
 int main()
 {
-    int position, element, delposition;
-    node *head = new node();
-    node *first = new node();
-    node *second = new node();
-    head->data = 10;
-    head->link = first;
-    first->data = 20;
-    first->link = second;
-    second->data = 30;
-    second->link = NULL;
-    deletelist(head, 1);
-    display(head);
+
+    complex selva(5, 6);
+    selva.add(2, 3);
+    selva.print();
     return 0;
 }

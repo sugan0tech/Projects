@@ -37,7 +37,7 @@ for word in f:
 import pyautogui, time
 word = "Unaku enna pa"
 time.sleep(5)
-for i in range(10):
+for i in range(100):
     pyautogui.typewrite(word)
     
     pyautogui.hotkey("enter")

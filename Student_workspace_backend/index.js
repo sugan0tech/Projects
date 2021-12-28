@@ -4,7 +4,6 @@ const express = require('express');
 const app = express();
 
 console.log(chalk.green.inverse.bold("Listening on port 5000"));
-
 app.use(express.urlencoded({extended : false}))
 db.insert(2, "kali", "saamplehas");
 

@@ -1,21 +1,20 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
 
-template<class T>
+template <class loosu>
 class Node
 {
-    public:
-    T x;
-    Node(T u)
+public:
+    loosu x;
+    Node(loosu u)
     {
         x = u;
     };
     void display()
     {
-        cout<<x<<endl;
+        cout << x << endl;
     };
-
 };
 
 int main()

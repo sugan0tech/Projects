@@ -34,12 +34,12 @@ for word in f:
 'up', 'volumedown', 'volumemute', 'volumeup', 'win', 'winleft', 'winright', 'yen',
 'command', 'option', 'optionleft', 'optionright']
 """
-import pyautogui, time
-word = "Unaku enna pa"
+
+import pyautogui
+import time
+word = "Happy New Year to Girig"
 time.sleep(5)
-for i in range(100):
+for i in range(1000):
     pyautogui.typewrite(word)
-    
+
     pyautogui.hotkey("enter")
-
-

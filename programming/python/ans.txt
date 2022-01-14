@@ -1,0 +1,125 @@
+Test 1 solutions :
+
+000*000 problem
+
+
+n = int(input())
+i = 0
+j = 0
+
+while i<n:
+	j=0
+	while j<n*2+1:
+		if j == i or j == n*2-i or j == n:
+			print('*', end='')
+		else:
+			print('0', end='')
+		j+=1
+	print()
+	i+=1
+
+number * problem
+
+
+n = int(input())
+i=0
+j=0
+p=0
+while i<n:
+    p=n
+    j=0
+    while j<n:
+        if(j == n-i-1):
+        	print("*", end="")
+        else:
+            print(p, end="")
+        p-=1
+        j+=1
+    print()
+    i+=1
+
+Check Armstrong
+
+n=int(input())
+no_of_digits=0
+org_n=n
+orginal_no=n
+Armstrong=0
+while n>0:
+    no_of_digits+=1
+    n=n//10
+while org_n>0:
+    Last_Digit = org_n % 10
+    Armstrong  = Armstrong  + ((Last_Digit)**(no_of_digits))
+    org_n = (org_n //10)
+if orginal_no==Armstrong:
+    print("true")
+else:
+    print("false")
+
+
+Test 2:
+
+Leader
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void Leaders(int* arr, int len){
+    int j = len-1;
+    vector<int> v;
+    for(int i=len-1; i>=0; i--){
+        if(i==len-1){
+            v.push_back(arr[i]);
+            continue;
+        }
+        if(arr[i]>=arr[j]){
+            v.push_back(arr[i]);
+            j=i;
+        }
+    }
+    for(int i=v.size()-1; i>=0; i--){
+        cout<<v[i]<<" ";
+    }
+}
+
+Minimum length
+
+def minLengthWords(inp):
+    length = len(inp)
+    si = ei = 0
+    min_length = length
+    min_start_index = max_length = max_start_index = 0
+    while ei <= length:
+        if (ei < length) and (inp[ei] != " "):
+            ei += 1
+        else:
+            curr_length = ei - si
+            if curr_length < min_length:
+                min_length = curr_length
+                min_start_index = si
+            if curr_length > max_length:
+                max_length = curr_length
+                max_start_index = si
+            ei += 1
+            si = ei   
+    minWord = inp[min_start_index :
+                  min_start_index + min_length]
+
+    print(minWord)
+
+a = input()
+minLengthWords(a)
+
+
+2 d
+
+n,m=map(int,input().split())
+
+for i in range(n):
+
+    a=list(map(int,input().split()))
+
+    for j in range(n-i):
+
+        print(*a)

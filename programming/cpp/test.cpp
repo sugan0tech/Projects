@@ -1,18 +1,20 @@
 #include <iostream>
 using namespace std;
-template <typename T>
-T maxx(T x, T y)
-{
-    if (x > y)
-        return x;
-    else
-        return y;
-}
-
 int main()
 {
-    int c = maxx<int>(10, 5);
-    float d = maxx<float>(4.5f, 6.8f);
-    cout << c << d;
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = n - 1; j >= i; j--)
+        {
+            cout << " ";
+        }
+        for (int j = 0; j - 1 < i; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    };
     return 0;
-}
+};

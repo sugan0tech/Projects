@@ -5,7 +5,9 @@ public class First {
 
         Second.print();
         Second tat = new Second();
-        System.out.println(tat.data);
+        for (Object i : args) {
+            System.out.println(i);
+        }
 
     }
 

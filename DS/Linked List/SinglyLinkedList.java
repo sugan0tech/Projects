@@ -60,6 +60,46 @@ public class SinglyLinkedList {
                     break;
 
                 case 3:
+                    System.out.print("\n   Enter the node data :");
+                    data = scan.nextInt();
+                    neww = new Node(data);
+                    neww.next = head;
+                    head = neww;
+                    break;
+                case 4:
+                    System.out.print("\n   Enter the node data :");
+                    data = scan.nextInt();
+                    temp = head;
+                    while (temp.next != null) {
+                        temp = temp.next;
+                    }
+                    temp.next = new Node(data);
+                    break;
+                case 5:
+                    System.out.print("\n Enter the index val :");
+                    int n = scan.nextInt();
+                    System.out.print("\n   Enter the node data :");
+                    data = scan.nextInt();
+                    temp = head;
+                    while (n > 0) {
+                        temp = temp.next;
+                        n--;
+                    }
+                    neww = temp.next;
+                    temp.next = new Node(data);
+                    temp.next.next = neww;
+                    break;
+                case 6:
+                    System.out.print("\n   Enter the node data :");
+                    data = scan.nextInt();
+                    temp = head;
+                    while (temp.next != null) {
+                        if (temp.next.data == data) {
+                            temp.next = temp.next.next;
+                            break;
+                        }
+                        temp = temp.next;
+                    }
                     break;
                 default:
                     break;

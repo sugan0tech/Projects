@@ -17,42 +17,44 @@ public class SinglyLinkedList {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int option, data;
-        Node Head = null, temp = new Node(), neww = new Node();
+        Node head = null, temp = new Node(), neww = new Node();
         System.out.println(
-                "1 for creating new Linked \n" +
+                "\n1 for creating new Linked \n" +
                         "2 for printing Linked List \n" +
                         "3 for adding element to first index \n" +
                         "4 for appending\n" +
                         "5 for adding element at desired place\n" +
                         "6 for deleting an element");
-
+        System.out.print("\n Enter the option :");
         option = scan.nextInt();
         while (option != 0) {
             switch (option) {
                 case 1:
-                    System.out.println("\nEnter the node data :");
+                    System.out.print("\n   Enter the node data :");
                     data = scan.nextInt();
                     while (data != 0) {
 
                         neww = new Node();
                         neww.data = data;
-                        if (Head == null) {
-                            Head = neww;
-                            temp = Head;
+                        if (head == null) {
+                            head = neww;
+                            temp = head;
                         } else {
                             temp.next = neww;
                             temp = temp.next;
                             temp.next = null;
                         }
-                        System.out.println("\nEnter the node data :");
+                        System.out.print("   Enter the node data :");
                         data = scan.nextInt();
                     }
                     break;
 
                 case 2:
-                    temp = Head;
+                    temp = head;
+                    System.out.print("\n    " + temp.data);
+                    temp = temp.next;
                     while (temp != null) {
-                        System.out.println(temp.data);
+                        System.out.print(" - > " + temp.data);
                         temp = temp.next;
                     }
                     break;
@@ -64,14 +66,16 @@ public class SinglyLinkedList {
             }
 
             System.out.println(
-                    "1 for creating new Linked \n" +
+                    "\n\n1 for creating new Linked \n" +
                             "2 for printing Linked List \n" +
                             "3 for adding element to first index \n" +
                             "4 for appending\n" +
                             "5 for adding element at desired place\n" +
                             "6 for deleting an element");
+            System.out.print("\n  Enter the option :");
             option = scan.nextInt();
         }
+        scan.close();
     }
 
 }

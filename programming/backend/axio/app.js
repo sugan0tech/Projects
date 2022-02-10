@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 })
 
 //route for /api/people
-app.post("/api/people", async (req, res) => {
+app.post("/api/people", async(req, res) => {
     res.status(200).send(" got it")
     console.log(req.body)
 })

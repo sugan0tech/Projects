@@ -1,1 +1,3 @@
 node_modules
+/student-workspace/node_modules
+/student-workspace/yarn.lock

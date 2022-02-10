@@ -4,19 +4,11 @@ const userSchema = mongoose.Schema({
     name: String,
     passord: String,
     age: Number,
-    sex: String,
-    birth_date: Date,
-    hobbies: [String], // array
-    address: {
-        door_number: Number,
-        city: String,
-        pin_code: Number
-    },
+    dept: String,
     created_at: Date,
     updated_at: Date,
-    phone: Number,
-    associates: mongoose.SchemaTypes.ObjectId // reference to another object
-
+    associates: mongoose.SchemaTypes.ObjectId,
+    assignments: [mongoose.SchemaTypes.ObjectId]
 })
 
 module.exports = mongoose.model("User", userSchema);

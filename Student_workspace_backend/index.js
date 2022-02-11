@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const user = require("./user");
+const user = require("./models/user");
 const url = "mongodb://localhost:27017/test";
 const hash = require("./hash").hash;
 
@@ -10,6 +10,8 @@ mongoose.connect(url, () => {
 }, (err) => {
     console.log(err);
 });
+
+// middle ware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -44,12 +46,15 @@ app.post("/update", (req, res) => {
 
     );
 })
+
 async function push(data) {
     try {
-        data.password = hash(data.password);
-        const newUser = new user(data);
-        await newUser.save();
-        console.log(newUser);
+        const valid = await user.exists({ $and: [{ name: data.name }, { password: hash(data.password) }] });
+        if (valid == null) {
+            data.password = hash(data.password);
+            const newUser = new user(data);
+            await newUser.save();
+        }
     } catch (e) {
         console.log(e);
     }

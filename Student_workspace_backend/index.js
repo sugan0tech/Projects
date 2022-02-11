@@ -33,6 +33,28 @@ app.post("/login", (req, res) => {
     );
 })
 
+app.post("/update", (req, res) => {
+    push(req.body).then(
+        () => {
+            res.send("data updated successfully");
+        },
+        (err) => {
+            res.send("Error occured in updation");
+        }
+
+    );
+})
+async function push(data) {
+    try {
+        data.password = hash(data.password);
+        const newUser = new user(data);
+        await newUser.save();
+        console.log(newUser);
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 async function check(userName, userPassword) {
 
     try {

@@ -19,10 +19,18 @@ app.get("/", (req, res) => {
 
 app.post("/login", (req, res) => {
     console.log(req.body);
-    if (check(req.body.name, req.body.password) == false)
-        res.send("not found");
-    else
-        res.send("welcome");
+    check(req.body.name, req.body.password).then(
+        (value) => {
+            if (value == false)
+                res.send("not found");
+            else
+                res.send("found it");
+        },
+        (err) => {
+            console.log("error occured");
+            res.send("error occured in login");
+        }
+    );
 })
 
 async function check(userName, userPassword) {

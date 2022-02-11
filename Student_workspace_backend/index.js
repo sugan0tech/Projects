@@ -1,22 +1,42 @@
-const chalk = require('chalk');
-const db = require('./db');
-const express = require('express');
+const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
+const user = require("./user");
+const url = "mongodb://localhost:27017/test";
+const hash = require("./hash").hash;
 
-console.log(chalk.green.inverse.bold("Listening on port 5000"));
-app.use(express.urlencoded({extended : false}))
-db.insert(2, "kali", "saamplehas");
+mongoose.connect(url, () => {
+    console.log("connected to db")
+}, (err) => {
+    console.log(err);
+});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-
-app.post("/", (req, res) => {
-    res.status(200);
-    res.send("hi there");
-    console.log("got you");
-    var tmp = req.body;
-    if(tmp.flag == "insert")
-        db.insert(tmp.id, tmp.name, tmp.hash);
-    else
-        db.drop();
+app.get("/", (req, res) => {
+    res.status(200).send("<h1>this is the default page</h1>");
 })
 
-app.listen(5000)
+app.post("/login", (req, res) => {
+    console.log(req.body);
+    if (check(req.body.name, req.body.password) == false)
+        res.send("not found");
+    else
+        res.send("welcome");
+})
+
+async function check(userName, userPassword) {
+
+    try {
+        const valid = await user.exists({ $and: [{ name: userName }, { password: hash(userPassword) }] });
+        if (valid == null) {
+            console.log("not found ");
+            return false;
+        }
+    } catch (e) {
+        console.log(e);
+    }
+    return true;
+}
+
+app.listen(4000)

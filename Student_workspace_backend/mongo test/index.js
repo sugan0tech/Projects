@@ -27,8 +27,11 @@ app.post("/login", (req, res) => {
 
 async function run(nme, psswd) {
     try {
-        const user = await User.find({ $and: [{ name: nme }, { password: psswd }] });
-        console.log("data by the db", user)
+        const user = await User.exists({ $and: [{ name: nme }, { password: psswd }] });
+        if (user == null)
+            console.log("nope")
+        else
+            console.log("user found")
 
     } catch (e) {
 

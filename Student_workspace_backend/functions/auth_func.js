@@ -1,5 +1,6 @@
 const user = require("../models/user");
 const hash = require("./hash").hash;
+const chalk = require("chalk");
 async function push(data) {
     try {
         const valid = await user.exists({ $and: [{ name: data.name }, { password: hash(data.password) }] });
@@ -12,6 +13,7 @@ async function push(data) {
         }
     } catch (e) {
         console.log(e);
+        console.log(chalk.bold.red.inverse("Error !!! in auth function"));
     }
     return false;
 }
@@ -21,11 +23,11 @@ async function check(userName, userPassword) {
     try {
         const valid = await user.exists({ $and: [{ name: userName }, { password: hash(userPassword) }] });
         if (valid == null) {
-            console.log("not found ");
             return false;
         }
     } catch (e) {
         console.log(e);
+        console.log(chalk.bold.red.inverse("Error !!! in auth function"));
     }
     return true;
 }

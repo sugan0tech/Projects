@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const func = require("../functions/auth_func");
+const chalk = require("chalk");
 
 router.use((req, res, callback) => {
-    console.log(req.url + "@" + new Date);
+    console.log(chalk.bold.yellow(`\n${req.url}@ ${new Date}\n`));
     callback();
 })
 router.use(express.json());
@@ -14,19 +15,19 @@ router.route("/")
         res.status(200).send("<h1>register page<h1>");
     })
     .post((req, res) => {
-        console.log(req.body);
+        console.log(chalk.green("reqest api : "), req.body);
         func.push(req.body).then(
             (value) => {
                 if (value)
-                    res.send("data updated successfully");
+                    console.log(chalk.bold.red("\n\t data updated successfully\n"));
                 else
-                    res.send("user already exists");
+                    console.log(chalk.bold.green.inverse("\n\t user user already exists\n"));
             },
             (err) => {
-                res.send("Error occured in updation");
+                console.log(chalk.red.bold.inverse("Error occured in registration"));
             }
-
         );
+        res.send("ok thank you");
     })
 
 module.exports = router

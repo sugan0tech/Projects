@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const login = require("./routes/login");
 const register = require("./routes/register");
+const update = require("./routes/update");
 const chalk = require("chalk");
 const mongoose = require("./db");
 console.log(chalk.yellow("\n-----------------------------------------------------"));
@@ -9,8 +10,10 @@ console.log(chalk.yellow("-----------------------------------------------------\
 
 // middlewares
 //routes
-app.use("/login", login);
-app.use("/register", register);
+app
+    .use("/login", login)
+    .use("/register", register)
+    .use("/update", update);
 
 // default page
 app.get("/", (req, res) => {

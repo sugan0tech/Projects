@@ -3,14 +3,17 @@ const router = express.Router();
 const func = require("../functions/auth_func");
 const chalk = require("chalk");
 
-router.use((req, res, callback) => {
-    console.log(chalk.bold.yellow(`\n${req.url}@ ${new Date}\n`));
-    callback();
-})
-router.use(express.json());
-router.use(express.urlencoded({ extended: true }));
+// middle wares
+router
+    .use((req, res, callback) => {
+        console.log(chalk.bold.yellow(`\n${req.url}@ ${new Date}\n`));
+        callback();
+    })
+    .use(express.json())
+    .use(express.urlencoded({ extended: true }));
 
-router.route("/")
+router
+    .route("/")
     .get((req, res) => {
         res.status(200).send("<h1>register page<h1>");
     })

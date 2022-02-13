@@ -32,4 +32,17 @@ async function check(userName, userPassword) {
     return true;
 }
 
-module.exports = { push, check }
+async function update(data) {
+    try {
+        const updateUsr = await user.updateOne(data);
+        console.log(updateUsr);
+        console.log(chalk.green.bold("\n\t User updated successfully"));
+
+    } catch (e) {
+        console.log(e);
+        console.log(chalk.bold.red.inverse("Error !!! in auth function"));
+
+    }
+}
+
+module.exports = { push, check, update }

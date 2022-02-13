@@ -22,9 +22,9 @@ router
         func.push(req.body).then(
             (value) => {
                 if (value)
-                    console.log(chalk.bold.red("\n\t data updated successfully\n"));
+                    console.log(chalk.bold.green("\n\t data updated successfully\n"));
                 else
-                    console.log(chalk.bold.green.inverse("\n\t user user already exists\n"));
+                    console.log(chalk.bold.red("\n\t user user already exists\n"));
             },
             (err) => {
                 console.log(chalk.red.bold.inverse("Error occured in registration"));

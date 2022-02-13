@@ -1,9 +1,10 @@
 const user = require("../models/user");
 const hash = require("./hash").hash;
 const chalk = require("chalk");
+
 async function push(data) {
     try {
-        const valid = await user.exists({ $and: [{ name: data.name }, { password: hash(data.password) }] });
+        const valid = await user.exists({ $and: [{ name: data.name }] });
         console.log(data);
         if (valid == null) {
             data.password = hash(data.password);

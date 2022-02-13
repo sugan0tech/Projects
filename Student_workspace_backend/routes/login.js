@@ -1,11 +1,12 @@
 "use strict";
 const express = require("express");
 const router = express.Router();
+const functions = require("../functions/login_func");
 router.route("/")
     .get((req, res) => {})
-    .post("/login", (req, res) => {
+    .post((req, res) => {
         console.log(req.body);
-        check(req.body.name, req.body.password).then(
+        functions.check(req.body.name, req.body.password).then(
             (value) => {
                 if (value == false)
                     res.send("not found");

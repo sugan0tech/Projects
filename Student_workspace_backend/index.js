@@ -1,10 +1,8 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const user = require("./models/user");
 const url = "mongodb://localhost:27017/test";
-const hash = require("./hash").hash;
-const login = require("./routes/login");
+const login = require("./routes/login.js");
 
 mongoose.connect(url, () => {
     console.log("Database Conected")
@@ -52,34 +50,6 @@ app.post("/register", (req, res) => {
     );
 })
 
-async function push(data) {
-    try {
-        const valid = await user.exists({ $and: [{ name: data.name }, { password: hash(data.password) }] });
-        if (valid == null) {
-            data.password = hash(data.password);
-            const newUser = new user(data);
-            await newUser.save();
-            return true;
-        }
-    } catch (e) {
-        console.log(e);
-    }
-    return false;
-}
-
-async function check(userName, userPassword) {
-
-    try {
-        const valid = await user.exists({ $and: [{ name: userName }, { password: hash(userPassword) }] });
-        if (valid == null) {
-            console.log("not found ");
-            return false;
-        }
-    } catch (e) {
-        console.log(e);
-    }
-    return true;
-}
 
 app.listen(5000);
 console.log("listening on port 5000");

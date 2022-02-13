@@ -35,7 +35,7 @@ async function check(userName, userPassword) {
 async function update(data) {
     try {
         data.password = hash(data.password);
-        const updateUsr = await user.updateOne(data);
+        const updateUsr = await user.updateOne({ name: data.name }, data);
         console.log(updateUsr);
         console.log(chalk.green.bold("\n\t User updated successfully"));
 

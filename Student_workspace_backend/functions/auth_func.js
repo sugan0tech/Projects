@@ -1,5 +1,5 @@
 const user = require("../models/user");
-const hash = require("../hash").hash;
+const hash = require("./hash").hash;
 async function push(data) {
     try {
         const valid = await user.exists({ $and: [{ name: data.name }, { password: hash(data.password) }] });

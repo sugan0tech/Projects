@@ -4,14 +4,16 @@ const mongoose = require("mongoose");
 const user = require("./models/user");
 const url = "mongodb://localhost:27017/test";
 const hash = require("./hash").hash;
+const login = require("./routes/login");
 
 mongoose.connect(url, () => {
-    console.log("connected to db")
+    console.log("Database Conected")
 }, (err) => {
-    console.log(err);
+    console.log("Not Connected to Database err occured");
 });
 
-// middle ware
+app.use("/login", login);
+// middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -35,10 +37,13 @@ app.post("/login", (req, res) => {
     );
 })
 
-app.post("/update", (req, res) => {
+app.post("/register", (req, res) => {
     push(req.body).then(
-        () => {
-            res.send("data updated successfully");
+        (value) => {
+            if (value)
+                res.send("data updated successfully");
+            else
+                res.send("user already exists");
         },
         (err) => {
             res.send("Error occured in updation");
@@ -54,10 +59,12 @@ async function push(data) {
             data.password = hash(data.password);
             const newUser = new user(data);
             await newUser.save();
+            return true;
         }
     } catch (e) {
         console.log(e);
     }
+    return false;
 }
 
 async function check(userName, userPassword) {
@@ -74,4 +81,5 @@ async function check(userName, userPassword) {
     return true;
 }
 
-app.listen(4000)
+app.listen(5000);
+console.log("listening on port 5000");

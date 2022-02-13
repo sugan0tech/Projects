@@ -3,6 +3,7 @@ const hash = require("../hash").hash;
 async function push(data) {
     try {
         const valid = await user.exists({ $and: [{ name: data.name }, { password: hash(data.password) }] });
+        console.log(data);
         if (valid == null) {
             data.password = hash(data.password);
             const newUser = new user(data);

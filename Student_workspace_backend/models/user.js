@@ -17,12 +17,12 @@ const userSchema = mongoose.Schema({
     createdAt: {
         type: Date,
         default: new Date,
-        immutable: false
+        immutable: true
     },
     changedAt: {
         type: Date,
         default: new Date,
-        immutable: true,
+        immutable: false,
     }
 })
 

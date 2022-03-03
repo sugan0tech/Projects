@@ -7,6 +7,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.get("/", (req, res) => {
+    console.log(req)
     res.status(200).send("Dude you just got me")
 })
 

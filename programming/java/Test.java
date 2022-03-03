@@ -1,22 +1,16 @@
 public class Test {
 
-    public static void fun() {
-        System.out.println("fun");
-
-    };
-
-    public void hi() {
-        System.out.println(":thinking:");
-    };
-
     public static void main(String[] args) {
-        byte[] arr = { 1, 2, 3, 4, 5, 6, 7 };
-
-        for (byte i : arr) {
-            System.out.println(i);
+        int i;
+        for (i = 1; i <= 6; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            for (int k = 6; k > i; k--) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
-        fun();
-        new Test().hi();
     };
 
 }

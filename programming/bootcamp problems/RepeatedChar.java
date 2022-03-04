@@ -15,6 +15,7 @@ public class RepeatedChar {
 
         }
         System.out.println(repeatedCharSet);
+        scan.close();
     }
 
 }

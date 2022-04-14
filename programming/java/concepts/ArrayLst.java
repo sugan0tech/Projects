@@ -1,5 +1,3 @@
-package concepts;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.function.Consumer;
@@ -13,6 +11,9 @@ public class ArrayLst {
         arr.add(3);
         arr.add(4);
         arr.add(5);
+        arr.forEach((n) -> {
+            System.out.println(n);
+        });
         // .get(i) to get i'th element where i is the index
         System.out.println(arr.get(1));
         // .size() gives the size of array

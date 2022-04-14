@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    html user details
+
+</head>
+
+<body>
+    <form>
+        <label>User Name :</label>
+        <br>
+        <input id="usrName" type="text" value="sugavanesh">
+        <br>
+        <label>Password :</label>
+        <br>
+        <input id="Password" type="text" value="test1283">
+        <br>
+        <label>Email :</label>
+        <br>
+        <input id="email" type="text" value="me@gmail.com">
+        <br>
+        <label>Hobbies :</label>
+        <br>
+        <input id="hobbies" type="checkbox">
+        <br>
+        <label>male </label>
+        <input type="radio" name="male" id="gender">
+        <br>
+        <label>female </label>
+        <input type="radio" name="female" id="gender">
+        <br>
+        <label for="country">country :</label>
+
+        <select name="country" id="country">
+            <option value="india">india</option>
+            <option value="china">china</option>
+            <option value="russia">russia</option>
+        </select>
+        <input type="submit" onclick="validate()">
+
+    </form>
+
+</body>
+<script>
+    let nameRegex = /^([\w]){7, 12}/
+    let passwordRegex = /^([\w\d]){7,12}/i
+    let mailRegex = /^\w([\w\d])+@\w([\w])+([.\w])+$/
+
+    function validate() {
+        const name = document.getElementById("userName").value;
+        const password = document.getElementById("Password").value;
+        const email = document.getElementById("email").value;
+        console.log(nameRegex.test(name) & passwordRegex.test(password) & mailRegex(email))
+    }
+</script>
+
+</html>

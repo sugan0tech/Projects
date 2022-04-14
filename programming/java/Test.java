@@ -1,16 +1,24 @@
+import java.util.Scanner;
+
 public class Test {
 
     public static void main(String[] args) {
-        int i;
-        for (i = 1; i <= 6; i++) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print(j);
+        Scanner scan = new Scanner(System.in);
+        String str = scan.nextLine();
+        String res = "";
+        int i = 0;
+        int count;
+        while (i < str.length()) {
+            count = 1;
+            while ((i < str.length() - 1) && str.charAt(i) == str.charAt(i + 1)) {
+                count++;
+                i++;
             }
-            for (int k = 6; k > i; k--) {
-                System.out.print("*");
-            }
-            System.out.println();
+            res = res + Character.toString(str.charAt(i)) + count;
+            i++;
         }
+        System.out.println(res);
+        scan.close();
     };
 
 }

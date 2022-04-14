@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <form>
+        <label>name:</label>
+        <input type="text" id="name" onfocusout="fun()">
+        <input type="submit" value="submit">
+    </form>
+
+</body>
+<script>
+    msg = "this is a message"
+    spacer = "........"
+    pos = 0;
+
+    function fun() {
+        let v = document.getElementById("name");
+        v.value = v.value.toUpperCase();
+    }
+
+    function ScrollMessage() {
+        window.status = msg.substring(pos, msg.length) + spacer + msg.substring(0, pos)
+        pos++;
+        if (pos > msg.length) {
+            pos = 0;
+        }
+    }
+    ScrollMessage()
+    var val1 = parseFloat(prompt("enter the number one"));
+    var val2 = parseFloat(prompt("enter the number one"));
+    document.write(val1 + val2)
+</script>
+
+</html>

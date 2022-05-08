@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE addresss [
+<!ELEMENT  addresss (address)+>
+<!ELEMENT  address (name, company, phone)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT company (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ATTLIST phone test CDATA #REQUIRED>
+]>
+<addresss>
+<address>
+    <name>sugan</name>
+    <company>company</company>
+    <phone test="ha ha">828383</phone>
+</address>
+</addresss>

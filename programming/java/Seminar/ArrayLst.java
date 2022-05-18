@@ -42,6 +42,11 @@ public class ArrayLst {
         arr.clear();
         System.out.println(arr); // gives empty array
 
+        // .equals Demonstration;
+        // implemented by hashcode in the background
+        ArrayList<Integer> test = new ArrayList<>(arr);
+        test.add(4);
+        System.out.println(test.equals(arr));
     }
 
 }

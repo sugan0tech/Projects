@@ -17,10 +17,13 @@ public class LinkedLst {
         lst.add(3);
         lst.add(4);
         lst.add(5);
+
         // .get(i) to get i'th element where i is the index
         System.out.println(lst.get(1));
+
         // .size() gives the size of array
         System.out.println(lst.size());
+
         /*
          * .set(i, e) to change element at a index
          * i => index
@@ -28,6 +31,7 @@ public class LinkedLst {
          */
         lst.set(1, 3);
         System.out.println(lst);
+
         // .remove(i) to remove element at i'th index
         lst.remove(2);
         System.out.println(lst);
@@ -37,10 +41,12 @@ public class LinkedLst {
             System.out.println(n);
         };
         lst.forEach(method);
+
         // iterating with for loops
         for (Integer i : lst) {
             System.out.println(i);
         }
+
         // .clear() to clear all the values in the array
         lst.clear();
         System.out.println(lst); // gives empty array

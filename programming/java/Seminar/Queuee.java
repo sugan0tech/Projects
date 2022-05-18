@@ -10,9 +10,13 @@ public class Queuee {
         que.add(4);
         que.add(5);
         System.out.println(que.size());
+
         System.out.println(que);
+
         System.out.println(que.poll()); // removes head
+
         System.out.println(que.peek()); // gives head
+
         que.clear();
 
     }

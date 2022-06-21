@@ -1,16 +1,10 @@
 #include <stdio.h>
+#include <string.h>
 int main()
 {
-    char a;
-    scanf("%c", &a);
-    char b[50];
-    scanf("%s", b);
-    char t;
-    scanf("%c", &t); //🤔
-    char str[100];
-    scanf("%[^\n]", str);
-    printf("%c \n", a);
-    printf("%s \n", b);
-    printf("%s", str);
-    return 0;
+    char s[100], s2[100];
+    fgets(s, 100, stdin);
+    fgets(s2, 100, stdin);
+    printf("%d\n", strlen(s));
+    printf("%d", strlen(s2));
 }

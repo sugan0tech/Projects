@@ -1,0 +1,11 @@
+{
+    "name": "sugavanesh",
+    "age": 8,
+    "clg": "SKCET",
+    "gpa": 9.3,
+    "address": {
+        "city": "salem",
+        "pin": 82838
+    },
+    "phone": [2838, 38383]
+}

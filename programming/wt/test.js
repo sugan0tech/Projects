@@ -1,0 +1,1 @@
+console.log(parseFloat("40.8 2 idiki"))

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Listener in javascript</title>
+</head>
+
+<body>
+    <!-- <button id="mybutton">btn</button> -->
+    <input type="button" value="btn" id="mybutton" onclick="func()">
+
+    <script>
+        function func() {
+            window.alert("OnClick event");
+        }
+        // document.getElementById("mybutton").onclick = function() {
+        //     window.alert("onclick evevnt listner");
+        // }
+        // const btn = document.getElementById("mybutton");
+        // btn.addEventListener("click", () => {
+        //     func();
+        // })
+        document.getElementById("mybutton").onmouseover = function() {
+            window.alert("MouseIn");
+        }
+        document.getElementById("mybutton").onmouseleave = function() {
+            window.alert("MouseLeft");
+        }
+    </script>
+</body>
+
+</html>

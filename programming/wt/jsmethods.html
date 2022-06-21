@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        To demonstrate the js methods
+    </title>
+
+</head>
+
+<body>
+    <script>
+        const str = window.prompt("prompt with date " + new Date()); // get's input
+        window.prompt("the entered value is " + str);
+        window.alert("alert box");
+        window.confirm("this is a confirm box");
+        for (var i = 0; i < 5; i++) {
+            document.write(`<h1>${i}</h1>`)
+        }
+
+        // function example
+        function function_name(var1, var2) {
+            document.writeln(`The two variables are :${var1} ${var2}`)
+        }
+        function_name("a", 2);
+
+        function fact(num) {
+            if (num <= 1)
+                return 1;
+            else
+                return num * fact(num - 1);
+        }
+        document.write("<table border='2'>")
+        document.writeln(
+            "<tr>" +
+            "<th>value</th>" +
+            "<th>fact</th>" +
+            "</tr>"
+        );
+        for (var j = 0; j < 10; j++) {
+            document.write(
+                "<tr>" +
+                `<td> ${i} </td>` +
+                `<td> ${fact(i)} </td>` +
+                "</tr>"
+            );
+
+        }
+        document.write("</table >")
+    </script>
+
+</body>
+
+</html>

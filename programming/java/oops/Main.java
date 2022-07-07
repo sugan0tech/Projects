@@ -1,7 +1,7 @@
-package oops;
+import test.Parent;
 
 public class Main {
     public static void test(int x) {
-        System.out.println(x);
+        Parent p = new Parent
     }
 }

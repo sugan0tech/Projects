@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Form validation
+    </title>
+</head>
+
+<body>
+    <form id="form">
+        <label for="name">Name :</label>
+        <input id="name" type="text" name="username">
+        <label for="email">email :</label>
+        <input id="email" type="email" name="email">
+        <label for="password">Password :</label>
+        <input id="password" type="password">
+        <button onclick="validate()">submit</button>
+    </form>
+
+    <script>
+        function validate() {
+            let formObject = document.getElementById("form")
+
+            if (formObject.elements[0].value.length < 1) {
+                window.alert("Invalid Username");
+            } else if (!passCheck(formObject.elements[1].value)) {
+                window.alert("Invalid Passowrd");
+            } else if (!emailCheck(formObject.elements[2].value)) {
+                window.alert("Invalid Email");
+            }
+        }
+
+        function passCheck(str) {
+            var ptn = /[0-9a-zA-Z]{6,12}/;
+            return ptn.test(str)
+        }
+
+        function emailCheck(str) {
+            var ptn = /[\w]+@[a-zA-Z]+.com/;
+            return ptn.test(str)
+        }
+    </script>
+</body>
+
+</html>

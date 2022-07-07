@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class ArrayLst {
     public static void main(String[] args) {
@@ -14,6 +15,10 @@ public class ArrayLst {
         arr.forEach((n) -> {
             System.out.println(n);
         });
+        Supplier<String> mehod = () -> "hi";
+        for (Integer i : arr) {
+            System.out.println(mehod.get());
+        }
         // .get(i) to get i'th element where i is the index
         System.out.println(arr.get(1));
         // .size() gives the size of array

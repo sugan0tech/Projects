@@ -17,6 +17,7 @@ class MainError {
 class SubError extends MainError {
     int a, b, c;
 
+    @Override
     void setData(int a, int b, int c) {
         this.a = a;
         this.b = b;

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- <!DOCTYPE address SYSTEM "test.dtd"> -->
 <!DOCTYPE addresss [
 <!ELEMENT  addresss (address)+>
 <!ELEMENT  address (name, company, phone)>
@@ -11,6 +12,11 @@
 <address>
     <name>sugan</name>
     <company>company</company>
-    <phone test="ha ha">828383</phone>
+    <phone test="RVS">828383</phone>
+</address>
+<address>
+    <name>ugan</name>
+    <company>testcompany</company>
+    <phone test="DBMS">8283838</phone>
 </address>
 </addresss>

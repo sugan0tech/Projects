@@ -1,1 +1,10 @@
-console.log(parseFloat("40.8 2 idiki"))
+function myDisplayer(some) {
+    document.getElementById("demo").innerHTML = some;
+}
+
+function myCalculator(num1, num2, myCallback) {
+    let sum = num1 + num2;
+    myCallback(sum);
+}
+
+myCalculator(5, 5, myDisplayer);
